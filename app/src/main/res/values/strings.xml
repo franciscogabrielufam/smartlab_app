@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Laboratory</string>
+    <string name="action_settings">Settings</string>
+    <string name="url_base">http://192.168.0.124/SmartCoffee/servico/android.php</string>
+
+    <string name="text_fragment_a">Menu Principal</string>
+    <string name="text_fragment_b">Cefeteira</string>
+    <string name="text_fragment_c">Datashow</string>
+    <string name="text_fragment_d">Arcondicionado</string>
+
+    <string-array name="titles_tab">
+        <item>Home</item>
+        <item>Caf</item>
+        <item>Dat</item>
+        <item>Arc</item>
+    </string-array>
+
+</resources>
