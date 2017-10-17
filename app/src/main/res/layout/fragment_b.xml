@@ -37,9 +37,8 @@
 
         <LinearLayout
             android:layout_width="190dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_weight="0.97">
+            android:layout_height="385dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="85dp"
@@ -49,7 +48,13 @@
                 android:text="Status"
                 android:textColor="#000000"
                 android:textSize="25dp" />
-
+            <ImageView
+                android:id="@+id/status_ca"
+                android:layout_width="172dp"
+                android:layout_height="238dp"
+                android:src="@drawable/preparando"
+                android:layout_marginTop="1dp"
+                />
             <TextView
                 android:id="@+id/status_c"
                 android:layout_width="wrap_content"
@@ -61,10 +66,10 @@
                 android:textSize="25dp" />
         </LinearLayout>
     </LinearLayout>
-    <Button
+ <!--   <Button
         android:id="@+id/bt"
         android:layout_width="150dp"
         android:layout_gravity="center_horizontal"
         android:layout_height="50dp"
-        android:text="Atualizar"/>
+        android:text="Atualizar"/> -->
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.newpc.laboratory.fragments;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -34,6 +35,7 @@ public class FragmentB extends Fragment {
     ImageView temp_c;
     TextView temp_ca;
     TextView status_c;
+    ImageView status_ca;
     Button bt;
     List<Cafeteira> listar = new ArrayList<>();
     @Override
@@ -48,18 +50,28 @@ public class FragmentB extends Fragment {
         temp_ca = view.findViewById(R.id.temp_ca);
         temp_c =  view.findViewById(R.id.temp_c);
         status_c = view.findViewById(R.id.status_c);
-        bt = view.findViewById(R.id.bt);
-        findAllCaf();
-
-        bt.setOnClickListener(new View.OnClickListener() {
+        status_ca = view.findViewById(R.id.status_ca);
+        //bt = view.findViewById(R.id.bt);
+        atualizar();
+/*        bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 findAllCaf();
             }
-        });
+        });*/
         return view;
     }
 
+    public void atualizar() {
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                findAllCaf();
+            }
+        }, 3000);
+    }
 
     /*----------cafeteira --------------------*/
     public void findAllCaf(){
@@ -80,6 +92,8 @@ public class FragmentB extends Fragment {
 
                                 listar.add(obj);
                             }
+
+                            atualizar();
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Log.i("pesqui", e.toString());
@@ -156,7 +170,7 @@ public class FragmentB extends Fragment {
                         temp_c.setImageResource(R.drawable.t70m);
                     }else {
                         temp_c.setImageResource(R.drawable.tmais);
-                    }
+                    }//
 
                   //  temp_c.setImageResource(R.drawable.t30);
                     temp_ca.setText(listar.get(i).getTemperatura_c()+"º C");
@@ -164,12 +178,15 @@ public class FragmentB extends Fragment {
 
                     int status = Integer.parseInt(listar.get(i).getStatus_c());
                     if(status > 450){
+                        status_ca.setImageResource(R.drawable.preparando);
                         status_c.setText("Preparando");
                     }else{
                         if(status <=450 && status>=400){
+                            status_ca.setImageResource(R.drawable.quase_pronto);
                             status_c.setText("Quase pronto");
                         }
                         else if(status<400){
+                            status_ca.setImageResource(R.drawable.pronto);
                             status_c.setText("Pronto!");
                         }
                     }
