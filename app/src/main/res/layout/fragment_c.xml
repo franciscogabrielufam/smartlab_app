@@ -4,42 +4,40 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!-- Datashow   **********************************-->
+    <!-- Cafeteira   **********************************-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="400dp"
         android:orientation="horizontal"
         android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="190dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.92"
-            android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="183dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/temp_d"
+                android:layout_width="100dp"
+                android:layout_height="352dp"
+                android:src="@drawable/t10"
+                android:scaleType="centerInside"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"/>
             <TextView
-                android:layout_width="160dp"
+                android:id="@+id/temp_da"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="TemperaturaD"
+                android:layout_marginTop="2dp"
+                android:text="captando"
                 android:textColor="#000000"
-                android:textSize="25dp" />
-
-            <TextView
-                android:id="@+id/temp_d"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_weight="0.25"
-                android:textColor="#00e676"
                 android:textSize="25dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="190dp"
-            android:layout_height="match_parent"
-            android:layout_weight="0.97"
+            android:layout_height="385dp"
             android:orientation="vertical">
 
             <TextView
@@ -50,22 +48,28 @@
                 android:text="Status"
                 android:textColor="#000000"
                 android:textSize="25dp" />
-
+            <ImageView
+                android:id="@+id/status_da"
+                android:layout_width="172dp"
+                android:layout_height="238dp"
+                android:src="@drawable/preparando"
+                android:layout_marginTop="1dp"
+                />
             <TextView
                 android:id="@+id/status_d"
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_weight="0.05"
+                android:layout_weight="0.25"
                 android:textColor="#00e676"
                 android:textSize="25dp" />
         </LinearLayout>
     </LinearLayout>
-    <Button
-        android:id="@+id/bt"
-        android:layout_width="150dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="50dp"
-        android:text="Atualizar"/>
+    <!--   <Button
+           android:id="@+id/bt"
+           android:layout_width="150dp"
+           android:layout_gravity="center_horizontal"
+           android:layout_height="50dp"
+           android:text="Atualizar"/> -->
 </LinearLayout>
