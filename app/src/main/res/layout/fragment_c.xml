@@ -15,7 +15,8 @@
         <LinearLayout
             android:layout_width="183dp"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
             <ImageView
                 android:id="@+id/temp_d"
                 android:layout_width="100dp"
@@ -26,19 +27,20 @@
                 android:layout_marginTop="10dp"/>
             <TextView
                 android:id="@+id/temp_da"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="2dp"
-                android:text="captando"
-                android:textColor="#000000"
+                android:text="sem serviço"
+                android:textColor="#CCCCCC"
                 android:textSize="25dp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="190dp"
             android:layout_height="385dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:weightSum="1">
 
             <TextView
                 android:layout_width="85dp"
@@ -51,18 +53,20 @@
             <ImageView
                 android:id="@+id/status_da"
                 android:layout_width="172dp"
-                android:layout_height="238dp"
-                android:src="@drawable/preparando"
+                android:layout_height="178dp"
+                android:src="@drawable/desligado_d"
                 android:layout_marginTop="1dp"
                 />
+
             <TextView
                 android:id="@+id/status_d"
-                android:layout_width="wrap_content"
+                android:layout_width="152dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_weight="0.25"
-                android:textColor="#00e676"
+                android:layout_weight="0.62"
+                android:text="desligado"
+                android:textColor="#f03838"
                 android:textSize="25dp" />
         </LinearLayout>
     </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.newpc.laboratory.fragments;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -80,7 +81,9 @@ public class FragmentC extends Fragment {
 
         /*nessa parte, é criada a estrutura de selecao para que a imagem mude de acordo com o valor da temperatura*/
         Double temp = dados.getTemperatura(); // a variavel temp recebe o valor da temperatura
-        if(temp<=10){
+        if(temp<=5) {
+            temp_d.setImageResource(R.drawable.tmenos);
+        }else if(temp<=10 && temp >5){
             temp_d.setImageResource(R.drawable.t10);
         }else if(temp>10 && temp<15) {
             temp_d.setImageResource(R.drawable.t10m);
@@ -132,27 +135,31 @@ public class FragmentC extends Fragment {
             temp_d.setImageResource(R.drawable.t70);
         }else if(temp>70 && temp <75){
             temp_d.setImageResource(R.drawable.t70m);
-        }else {
+        }else if(temp>=75 && temp <80){
             temp_d.setImageResource(R.drawable.tmais);
+        }else {
+            temp_d.setImageResource(R.drawable.tmais2);
         }//
 
         //  temp_c.setImageResource(R.drawable.t30);
         temp_da.setText(dados.getTemperatura()+"º C");
+        temp_da.setTextColor(Color.rgb(107,128,155));
 
 
-        Double status = dados.getLuminosidade();
-        if(status > 450){
-            status_da.setImageResource(R.drawable.preparando);
-            status_d.setText("Preparando");
-        }else{
-            if(status <=450 && status>=400){
-                status_da.setImageResource(R.drawable.quase_pronto);
-                status_d.setText("Quase pronto");
-            }
-            else if(status<400){
-                status_da.setImageResource(R.drawable.pronto);
-                status_d.setText("Pronto!");
-            }
+        Double luminosidade = dados.getLuminosidade();
+
+        if(luminosidade>=1000){//ex: 791 e 44
+            status_da.setImageResource(R.drawable.desligado_d);
+            status_d.setText("Desligado");
+            status_d.setTextColor(Color.RED);
+        }else if(luminosidade<=790){//ex: 790 e 45
+            status_da.setImageResource(R.drawable.projetando);
+            status_d.setText("Ligado/Projetando");
+            status_d.setTextColor(Color.rgb(0,230,118));
+        }else if(luminosidade>=880 && luminosidade<1000){//ex: 789 e 51
+            status_da.setImageResource(R.drawable.nao_projetando);
+            status_d.setText("Ligado/Não projetando");
+            status_d.setTextColor(Color.BLUE);
         }
     }
 

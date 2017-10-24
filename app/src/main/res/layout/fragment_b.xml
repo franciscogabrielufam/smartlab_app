@@ -26,15 +26,14 @@
                 android:layout_marginTop="10dp"/>
             <TextView
                 android:id="@+id/temp_ca"
-                android:layout_width="120dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="2dp"
-                android:text="captando"
-                android:textColor="#000000"
+                android:text="sem serviço"
+                android:textColor="#CCCCCC"
                 android:textSize="25dp" />
         </LinearLayout>
-
         <LinearLayout
             android:layout_width="190dp"
             android:layout_height="385dp"
@@ -52,7 +51,7 @@
                 android:id="@+id/status_ca"
                 android:layout_width="172dp"
                 android:layout_height="238dp"
-                android:src="@drawable/preparando"
+                android:src="@drawable/desigado_c"
                 android:layout_marginTop="1dp"
                 />
             <TextView
@@ -62,7 +61,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_weight="0.25"
-                android:textColor="#00e676"
+                android:textColor="#f03838"
+                android:text="desligada"
                 android:textSize="25dp" />
         </LinearLayout>
     </LinearLayout>

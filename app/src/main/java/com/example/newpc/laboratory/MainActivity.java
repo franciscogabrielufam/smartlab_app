@@ -1,5 +1,6 @@
 package com.example.newpc.laboratory;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -39,6 +40,30 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+
+        mTabLayout.getTabAt(0).setIcon(R.drawable.ativado);
+        mTabLayout.getTabAt(1).setIcon(R.drawable.desativado);
+        mTabLayout.getTabAt(2).setIcon(R.drawable.desativado);
+        mTabLayout.getTabAt(3).setIcon(R.drawable.desativado);
+
+
+        mTabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                mTabLayout.getTabAt(tab.getPosition()).setIcon(R.drawable.ativado);
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                mTabLayout.getTabAt(tab.getPosition()).setIcon(R.drawable.desativado);
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                mTabLayout.getTabAt(tab.getPosition()).setIcon(R.drawable.ativado);
+            }
+        });
+
     }
 
     @Override
@@ -55,11 +80,12 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        //noinspection SimplifiableIfStatem ent
         if (id == R.id.action_settings) {
+            Intent sobre = new Intent(this, SobreActivity.class);
+            startActivity(sobre);
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
